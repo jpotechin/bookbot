@@ -34,14 +34,15 @@ def chars_dict_to_sorted_list(num_chars_dict):
     return sorted_list
 
 
-def get_chars_dict(text):
+def get_chars_dict(text: str):
     chars = {}
     for c in text:
         lowered = c.lower()
-        if lowered in chars:
-            chars[lowered] += 1
-        else:
-            chars[lowered] = 1
+        if lowered.isalpha():
+            if lowered in chars:
+                chars[lowered] += 1
+            else:
+                chars[lowered] = 1
     return chars
 
 
